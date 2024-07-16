@@ -201,9 +201,9 @@ var tl = gsap.timeline({
         scrub: 1
     }
 })
-tl.to(".navbar", {
-    y: -150,
-}, "anim")
+// tl.to(".navbar", {
+//     y: -150,
+// }, "anim")
 tl.to(".head_one", {
     x: -25,
     y: -25,
