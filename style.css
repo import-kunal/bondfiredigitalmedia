@@ -1264,3 +1264,43 @@ margin: 4rem 0rem;
   text-decoration: none;
 }
 
+
+
+
+
+@media screen and (max-width: 299.98px) {
+  html {
+    font-size: 40%;
+  }
+
+  .navbar-collapse,
+  .call {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 359px) and (min-width: 298px) {
+}
+
+@media screen and (max-width: 480px) and (min-width: 299px) {
+  html {
+    font-size: 45%;
+  }
+  .navbar{
+    padding: 2rem;
+  }
+  .nav-r a{
+    display: none;
+  }
+  .modal{
+    width: 90vw;
+    height: 80vh;
+    padding: 10rem 3rem;
+  }
+  .aside_container ul li{
+    margin-bottom: 2rem;
+  }
+  .socialslink{
+    flex-direction: column;
+  }
+}
