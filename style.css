@@ -1330,4 +1330,11 @@ margin: 4rem 0rem;
     text-align: center;
     font-size: 2rem;
   }
+  .sidenav ul li:hover svg {
+    position: relative;
+    width: 5rem;
+    transition: 0.3s ease-in-out;
+    height: auto;
+    bottom:0.5rem;
+}
 }
