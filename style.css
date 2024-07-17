@@ -1269,7 +1269,7 @@ margin: 4rem 0rem;
 }
 
 
-
+/* =====================================MEDIA QUERY================================================================= */
 
 
 @media screen and (max-width: 299.98px) {
@@ -1291,20 +1291,45 @@ margin: 4rem 0rem;
     font-size: 45%;
   }
   .navbar{
-    padding: 2rem;
+    padding: 2rem 3rem;
   }
   .nav-r a{
     display: none;
   }
   .modal{
     width: 90vw;
-    height: 80vh;
-    padding: 10rem 3rem;
+    height: 85vh;
+    padding: 10rem 4rem 5rem 4.5rem ;
+    bottom: 4rem;
   }
-  .aside_container ul li{
-    margin-bottom: 2rem;
+  .cross{
+    width: 5rem;
+    height: 5rem;
+  }
+  .cross span{
+    width: 3rem;
+    top: 2.5rem;
+  }
+  .aside_container ul li a{
+    font-size: 3.5rem;
+  }
+  .sidenav p{
+    margin: 0rem 0rem 2rem 0rem;
+    font-size: 2.5rem;
+    color: #898989;
   }
   .socialslink{
     flex-direction: column;
+  }
+  .socials{
+    flex-direction: column;
+    gap: 4rem;
+  }
+  .aside_btn a{
+    width: 100%;
+    bottom: 0rem;
+    display: block;
+    text-align: center;
+    font-size: 2rem;
   }
 }

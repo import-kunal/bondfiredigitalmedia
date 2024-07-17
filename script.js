@@ -224,7 +224,7 @@ ScrollTrigger.matchMedia({
         trigger: ".header-content",
         start: "80% 40%",
         end: "100% 0",
-        markers: true,
+        // markers: true,
         scrub: 1,
       },
     });
