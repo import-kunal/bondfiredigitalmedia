@@ -1298,17 +1298,18 @@ margin: 4rem 0rem;
   }
   .modal{
     width: 90vw;
-    height: 85vh;
-    padding: 10rem 4rem 5rem 4.5rem ;
+    height: 80vh;
+    padding: 8rem 4rem 2rem 4.5rem ;
     bottom: 4rem;
   }
   .cross{
-    width: 5rem;
-    height: 5rem;
+    width: 4.5rem;
+    height: 4.5rem;
   }
   .cross span{
-    width: 3rem;
-    top: 2.5rem;
+    width: 2.5rem;
+    top: 2.25rem;
+    left:1rem
   }
   .aside_container ul li a{
     font-size: 3.5rem;
