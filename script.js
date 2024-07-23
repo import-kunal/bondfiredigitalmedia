@@ -1,3 +1,38 @@
+// // Prevent right click
+// document.oncontextmenu = () => {
+//   alert("Don't try right click");
+//   return false;
+// }
+
+// /* Still anyone can inspect elements by F12 key. View page source by
+// Ctrl + U key. Copy by Ctrl + C key. Paste by Ctrl + V key. Let's prevent these */
+
+// document.onkeydown = e => {
+//   // Prevent F12 key
+//   if (e.key == "F12") {
+//       alert("Don't try to inspect element");
+//       return false;
+//   }
+
+//   // Prevent showing page source by Ctrl + U
+//   if (e.ctrlKey && e.key == "u") {
+//       alert("Don't try to view page sources");
+//       return false;
+//   }
+
+//   // Prevent copying anything from the page
+//   if (e.ctrlKey && e.key == "c") {
+//       alert("Don't try to copy page element");
+//       return false;
+//   }
+
+//   // Prevent paste anything from other sources
+//   if (e.ctrlKey && e.key == "v") {
+//       alert("Don't try to paste anything to page");
+//       return false;
+//   }
+// }
+
 // GSAP Animations
 gsap.registerPlugin(ScrollTrigger);
 
@@ -108,6 +143,17 @@ document.addEventListener("DOMContentLoaded", function () {
 ScrollTrigger.matchMedia({
   //High DeskView
   "(min-width: 1400px)": function () {
+    // let lastScrollY = window.scrollY;
+
+    // ScrollTrigger.create({
+    //   onUpdate: (self) => {
+    //     if (self.direction === -1 && lastScrollY > window.scrollY) {
+    //       gsap.to(".navbar", { y: 0, duration: 0.3 }); // Show the navbar when scrolling up
+    //     }
+    //     lastScrollY = window.scrollY;
+    //   },
+    // });
+
     var tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".header-content",
@@ -147,7 +193,17 @@ ScrollTrigger.matchMedia({
         scrub: 3,
       },
     });
-    hamt1.to(".inner_pg", { opacity: 1, duration: 1 });
+
+    hamt1.to(".inner_pg", {
+      opacity: 1,
+      duration: 0.2,
+      onStart: function () {
+        gsap.set(".inner_pg", { display: "flex" });
+      },
+      onReverseComplete: function () {
+        gsap.set(".inner_pg", { display: "none", immediateRender: true });
+      },
+    });
 
     var t3 = gsap.timeline({
       scrollTrigger: {
@@ -190,19 +246,6 @@ ScrollTrigger.matchMedia({
       t4.to("#main", { backgroundColor: "#151515", duration: 0.1 });
     }
 
-    if (document.querySelector(".red_aft")) {
-      var t5 = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".red_aft",
-          start: "top 30%",
-          end: "90% bottom",
-          scrub: 0.1,
-          markers: true,
-        },
-      });
-      t5.to("#main", { backgroundColor: "#151515", duration: 0.1 });
-    }
-
     if (document.querySelector(".heading_serv")) {
       var t6 = gsap.timeline({
         scrollTrigger: {
@@ -215,6 +258,177 @@ ScrollTrigger.matchMedia({
       });
       t6.to(".heading_serv h2", { x: -250 }, "anim");
     }
+
+    if (document.querySelector(".wk")) {
+      var t7 = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".wk",
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 2,
+          pin: true,
+          pinSpacing: false,
+          markers: true,
+        },
+      });
+
+      t7.to(
+        ".hosp",
+        {
+          y: "0%",
+          stagger: 0.5,
+          onStart: () => gsap.to(".h6-hosp", { color: "#ffa700" }),
+          onReverseComplete: () => gsap.to(".h6-hosp", { color: "white" }),
+        },
+        "anim"
+      );
+
+      t7.to(
+        ".realst",
+        {
+          y: "-60vh",
+          stagger: 0.5,
+          onStart: () => gsap.to(".h6-realst", { color: "#ffa700" }),
+          onReverseComplete: () => gsap.to(".h6-realst", { color: "white" }),
+        },
+        "anim2"
+      );
+
+      t7.to(
+        ".fintech",
+        {
+          y: "-120vh",
+          stagger: 0.5,
+          onStart: () =>
+            gsap.to(".h6-fintech", { color: "#ffa700", delay: 0.5 }),
+          onReverseComplete: () => gsap.to(".h6-fintech", { color: "white" }),
+        },
+        "anim3"
+      );
+    }
+
+    // ========================================================================= WORK PAGE =========================================
+    if (document.querySelector(".work_sect")) {
+
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: ".work_sect",
+          start: "-25% top",
+          end: "10% bottom",
+          scrub: 2,
+          // markers: true,
+        },
+      }).to("#main", { backgroundColor: "#151515", duration: 0.1 });
+
+
+      var t5 = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".work_sect",
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 2,
+          markers: true,
+          pin: ".txtwk",
+        },
+      });
+      t5.to(
+        ".tra_section",
+        {
+          transform:
+            "translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
+            duration: 4, 
+            ease: "power1.inOut", 
+          },
+        1
+      );
+      t5.to(
+        ".txtwk",
+        {
+          width: "0vw",
+          duration: 4, 
+          ease: "power1.inOut",        
+          },
+        1
+      );
+      // t5.to(
+      //   ".wkbtm",
+      //   {
+      //     width: "0vw",
+      //     duration: 4, 
+      //     ease: "power1.inOut",        
+      //     },
+      //   1
+      // );
+
+      
+
+      var colimg = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".work_sect",
+          start: "top top",
+          end: "115% bottom",
+          scrub: 2,
+          markers: true,
+        },
+      });
+
+      colimg.to(
+        ".imgroll1",
+        {
+          transform:
+            "translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
+            duration: 2, // Extended duration for smoothness
+            ease: "power1.inOut", // Easing function for smooth animation
+          },
+        1
+      );
+      colimg.to(
+        ".imgroll2",
+        {
+          transform:
+            "translate3d(0, -10vh, 0) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
+            duration: 2, // Extended duration for smoothness
+            ease: "power1.inOut", // Easing function for smooth animation
+          },
+        1
+      );
+      colimg.to(
+        ".imgroll3",
+        {
+          transform:
+            "translate3d(0, 10vh, 0) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
+            duration: 2, // Extended duration for smoothness
+            ease: "power1.inOut", // Easing function for smooth animation
+          },
+        1
+      );
+      colimg.to(
+        ".imgroll4",
+        {
+          transform:
+            "translate3d(0, -15vh, 0) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
+            duration: 2, // Extended duration for smoothness
+            ease: "power1.inOut", // Easing function for smooth animation
+          },
+        1
+      );
+    }
+
+    // gsap.to(".crd", {
+    //   scrollTrigger: {
+    //     trigger: ".wk",
+    //     start: "top top",
+    //     end: "bottom bottom",
+    //     scrub: true,
+    //     pin: true,
+    //     pinSpacing: false,
+    //     markers: true,
+
+    //   },
+    //   yPercent: -100, // Adjust as needed to achieve the overlapping effect
+    //   stagger: 0.1,
+    //   duration: 1
+    // });
   },
 
   // Mobile Animations
@@ -236,4 +450,3 @@ ScrollTrigger.matchMedia({
       .to(".split_two", { height: "100vh" }, "anim");
   },
 });
-
