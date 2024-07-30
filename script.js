@@ -607,12 +607,12 @@ ScrollTrigger.matchMedia({
       },
     });
 
-    gsap.to(".p2conn span", {
-      rotation: "+=360", 
-      duration: 30, 
-      repeat: -1, 
-      ease: "linear",
-    });
+    // gsap.to(".p2conn span", {
+    //   rotation: "+=360", 
+    //   duration: 30, 
+    //   repeat: -1, 
+    //   ease: "linear",
+    // });
     gsap.to(".logo", {
       rotation: "+=360", 
       duration: 30, 

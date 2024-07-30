@@ -1971,12 +1971,30 @@ margin: 4rem 0rem 2rem;
   right: 3rem;
 }
 .p2_txt{
-  padding: 8rem 4rem ;
+  padding: 8rem 3rem ;
 }
 .p2_txt h3{
 width: 100%;
+margin-bottom: 4rem;
 }
-
+.p2_txt{
+  display: block;
+}
+.p2_left{
+  flex-direction: row;
+  width: 100%;
+}
+.ashtrik_ .logo{
+  width: 35vw;
+  padding: 3.5rem;
+}
+.p2conn{
+  /* position: relative; */
+  transform-origin: center;
+}
+.p2conn span{
+  transform-origin: 0% 16vw;
+}
 
 
 }
