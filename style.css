@@ -1317,14 +1317,12 @@ justify-content: center;
 }
 .solar{
   width: 100vw;
-  height: 80vh;
   overflow: hidden;
   object-fit: cover;
 
 }
 .solar object{
   width: 100%;
-  height: 100%;
 }
 .shade{
   position: absolute;
@@ -2041,9 +2039,7 @@ margin-bottom: 4rem;
 .c1bx2{
   height: 50%;
 }
-.c1bx4{
-  height: 150%;
-}
+
 
 
 .cs2col1{
@@ -2114,6 +2110,143 @@ margin-bottom: 4rem;
 }
 .sub_serv p{
   padding: 1.2rem 2.4rem;
+}
+
+.wk{
+  padding: 10rem 3rem !important ;
+  display: block;
+}
+.industries{
+  width: 100%;
+  gap: 4rem;
+}
+.crd{
+  height: 40vh;
+}
+
+
+
+.img_container_p3 {
+  width: 100vw;
+  height: 33.33vh;
+  position: absolute;
+  top: 0%;
+  bottom: auto;
+  left: 0%;
+  right: 0rem;
+  box-shadow: 1.5rem 0 2rem rgba(0, 0, 0, 0.11);
+}
+.img_container_p3 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#col1 {
+  position: absolute;
+  left: 200%;
+  top: 66.66vh;
+}
+#col2 {
+  position: absolute;
+  left: 150%;
+  top: 33.33vh;
+}
+#col3 {
+  position: absolute;
+  left: 100%;
+  top: 0vh;
+}
+
+.p3_text {
+  width: 100vw;
+  min-height: 66.66vh;
+  position: absolute;
+  bottom: 0%;
+  color: #f6f6f6;
+  margin-top: 33.33vh;
+  padding: 8rem 3rem 0rem 3rem;
+  opacity: 0; 
+  transition: opacity 0.8s ease-in-out; 
+  /* top: 50%;
+  transform: translateY(-50%); */
+}
+.anim_up{
+  height: auto;
+}
+.hwdt{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hwdt h1{
+  text-align: center;
+}
+.cli{
+  padding: 0rem 3rem;
+}
+.cli .cli_toptxt{
+  padding: 0rem;
+  width: 100%;
+}
+.cli .cli_toptxt h6{
+  padding: 2rem 0rem;
+}
+.clientslist{
+  flex-direction: row;
+}
+.cli_grid{
+  flex-direction: column;
+}
+.cli_container{
+  height: 12vh;
+  padding: 0rem 1rem;
+}
+
+.reviews{
+  padding: 8rem 3rem;
+  text-align: start;
+  min-height: auto;
+}
+.testi_more{
+  padding-top: 4rem;
+}
+.playicon{
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.shade{
+  height: 7vh;
+}
+.faq{
+padding: 8rem 3rem ;
+}
+.faq_header{
+  width: 100%;
+}
+.faq_container{
+  margin:auto;
+  padding-left:4rem ;
+}
+.faq_question{
+  padding-right: 2rem;
+}
+.video_container{
+  width: 80vw;
+  height: 85vh;
+}
+
+
+
+
+
+.ftr{
+  padding: 8rem 3rem;
+}
+.ft_div{
+  flex-direction: column;
+}
+.ft_col1, .ft_col2{
+  width: 100%;
 }
 
 

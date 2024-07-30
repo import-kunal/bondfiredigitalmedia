@@ -45,22 +45,22 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   // =======================================Earth===========================
 
-  var svgObject = document.getElementById('svg_earth');
+  // var svgObject = document.getElementById('svg_earth');
         
-  svgObject.addEventListener('load', function() {
-      var svgDoc = svgObject.contentDocument;
-      var svgElement = svgDoc.querySelector('svg');
+  // svgObject.addEventListener('load', function() {
+  //     var svgDoc = svgObject.contentDocument;
+  //     var svgElement = svgDoc.querySelector('svg');
 
       
       
-      // Apply CSS styles
-      var ellipse = svgElement.querySelector('ellipse');
-      if (ellipse) {
-          ellipse.style.fill = '#222222';
+  //     // Apply CSS styles
+  //     var ellipse = svgElement.querySelector('ellipse');
+  //     if (ellipse) {
+  //         ellipse.style.fill = '#222222';
          
-      }
+  //     }
      
-  });
+  // });
 
   // ====================================Handle text rotation==============================================
   const textElement = document.querySelector('.p2conn p');
@@ -591,14 +591,13 @@ ScrollTrigger.matchMedia({
         start: "top 70%",
         end: "bottom bottom",
         scrub: 3,
-        markers:true,
+        // markers:true,
       },
     });
 
     p2_menu.to(".inner_pg", {
       opacity: 1,
       duration: 0.2,
-      markers:true,
       onStart: function () {
         gsap.set(".inner_pg", { display: "flex" });
       },
@@ -638,6 +637,97 @@ ScrollTrigger.matchMedia({
         },
       });
     }
+
+    // ====================================================Industry expertise animation =================================================
+
+    if (document.querySelector(".wk")) {
+      var t7 = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".wk",
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 2,
+          pin: true,
+          pinSpacing: false,
+          // markers: true,
+        },
+      });
+
+      t7.to(
+        ".hosp",
+        {
+          y: "0%",
+          stagger: 0.5,
+          onStart: () => gsap.to(".h6-hosp", { color: "#ffa700" }),
+          onReverseComplete: () => gsap.to(".h6-hosp", { color: "white" }),
+        },
+        "anim"
+      );
+
+      t7.to(
+        ".realst",
+        {
+          y: "-40vh",
+          stagger: 0.5,
+          onStart: () => gsap.to(".h6-realst", { color: "#ffa700" }),
+          onReverseComplete: () => gsap.to(".h6-realst", { color: "white" }),
+        },
+        "anim2"
+      );
+
+      t7.to(
+        ".fintech",
+        {
+          y: "-80vh",
+          stagger: 0.5,
+          onStart: () =>
+            gsap.to(".h6-fintech", { color: "#ffa700", delay: 0.5 }),
+          onReverseComplete: () => gsap.to(".h6-fintech", { color: "white" }),
+        },
+        "anim3"
+      );
+    }
+
+
+
+       // ==============================================================HOW WE DO IT ANIMATION================================================================
+       if (document.querySelector(".p3_sticky_inner")) {
+
+        var how_we_do_it = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".p3_sticky_inner",
+            start: "top top",
+            end: "200% top",
+            scrub: 2,
+            pin: ".p3_sticky_inner",
+            // markers:true,
+          },
+        });
+        how_we_do_it
+        .to("#col1", { x: "-200%", duration: 1, ease: "power1.inOut" }, 0)
+        .to("#col2", { x: "-150%", duration: 1, ease: "power1.inOut" }, 0)
+        .to("#col3", { x: "-100%", duration: 1, ease: "power1.inOut" }, 0)
+        .to("#col1", { top: "0%", duration: 1, ease: "power1.inOut" }, 1)
+        .to("#col2", { top: "0%", duration: 1, ease: "power1.inOut" }, 1);
+
+      }
+  
+  
+      var how_we_do_it_para = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".p3_text",
+          start: "-20% 80%",
+          end: "60% bottom",
+          scrub: 3,
+          // markers:true,
+        },
+      });
+      how_we_do_it_para
+        .to(".p3_text", { opacity: 1, duration: 1 })
+        .to(".anim_up h2", {
+          y: 0,
+          duration: 0.5,
+        });
 
 
   },

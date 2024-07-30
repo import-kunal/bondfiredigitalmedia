@@ -1,6 +1,6 @@
 <svg width="2739" height="981" viewBox="0 0 2739 981" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="earth" clip-path="url(#clip0_164_2)">
-<ellipse id="earth_background" cx="1369.5" cy="1010" rx="1369.5" ry="1010" fill="#D9D9D9"/>
+<ellipse id="earth_background" cx="1369.5" cy="1010" rx="1369.5" ry="1010" fill="#222222"/>
 <g id="earthlayout">
 <g id="Group">
 <path id="Vector" opacity="0.01" fill-rule="evenodd" clip-rule="evenodd" d="M1640.41 30.9159C1642.91 30.6748 1645.33 30.9362 1647.65 31.6985C1649.2 32.7489 1649.89 34.0528 1649.71 35.6119C1646.58 34.0168 1643.48 32.4515 1640.41 30.9159Z" fill="#999999"/>
