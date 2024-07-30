@@ -581,5 +581,44 @@ ScrollTrigger.matchMedia({
       .to(".head_three", { x: -25, y: 25 }, "anim")
       .to(".split_one", { height: "100vh" }, "anim")
       .to(".split_two", { height: "100vh" }, "anim");
+
+
+       // ====================================================PAGE 2 HAMBURGER MENU  =================================================
+
+    var p2_menu = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".page2",
+        start: "top 70%",
+        end: "bottom bottom",
+        scrub: 3,
+        markers:true,
+      },
+    });
+
+    p2_menu.to(".inner_pg", {
+      opacity: 1,
+      duration: 0.2,
+      markers:true,
+      onStart: function () {
+        gsap.set(".inner_pg", { display: "flex" });
+      },
+      onReverseComplete: function () {
+        gsap.set(".inner_pg", { display: "none", immediateRender: true,});
+      },
+    });
+
+    gsap.to(".p2conn span", {
+      rotation: "+=360", 
+      duration: 30, 
+      repeat: -1, 
+      ease: "linear",
+    });
+    gsap.to(".logo", {
+      rotation: "+=360", 
+      duration: 30, 
+      repeat: -1, 
+      ease: "linear",
+    });
+
   },
 });
