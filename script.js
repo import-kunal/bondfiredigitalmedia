@@ -607,18 +607,38 @@ ScrollTrigger.matchMedia({
       },
     });
 
-    // gsap.to(".p2conn span", {
-    //   rotation: "+=360", 
-    //   duration: 30, 
-    //   repeat: -1, 
-    //   ease: "linear",
-    // });
+    gsap.to(".p2conn span", {
+      rotation: "+=360", 
+      duration: 30, 
+      repeat: -1, 
+      ease: "linear",
+    });
     gsap.to(".logo", {
       rotation: "+=360", 
       duration: 30, 
       repeat: -1, 
       ease: "linear",
     });
+
+
+// ===============================CASE STUDIES
+    
+    if (document.querySelector(".cstdy")) {
+      let sections = gsap.utils.toArray(".cstdycontainer");
+
+      gsap.to(sections, {
+        xPercent: -100 * (sections.length - 1),
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".cstdy",
+          pin: true,
+          scrub: 5,
+          snap: 1 / (sections.length - 1),
+          end: () => "+=" + document.querySelector(".cstdy").offsetWidth,
+        },
+      });
+    }
+
 
   },
 });

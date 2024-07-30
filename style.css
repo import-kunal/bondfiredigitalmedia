@@ -1846,7 +1846,7 @@ margin: 4rem 0rem 2rem;
     text-transform: uppercase;
   }
   h2 {
-    font-size: 10rem;
+    font-size: 5rem;
     font-family: "bondfire-bd";
   }
   h3 {
@@ -1994,6 +1994,126 @@ margin-bottom: 4rem;
 }
 .p2conn span{
   transform-origin: 0% 16vw;
+}
+
+.cstdycontainer {
+  height: 90vh;
+  flex-direction: column;
+
+}
+.cs {
+  width: 100%;
+  height: 100%;
+  background-color: #393939;
+  color: #f6f6f6;
+  border-radius: 0.5rem;
+}
+
+/* .cs1col1,.cs1col2, .cs1col3, 
+.cs2col1,.cs2col2, .cs2col3, 
+.cs3col1,.cs3col2, .cs3col3, 
+.cs4col1,.cs4col2, .cs4col3 {
+  display: flex;
+  flex-direction: column;
+} */
+.cs1col1, .cs2col3, 
+.cs3col1,
+.cs4col2 {
+ height: 100%;
+ width: 100%;
+ padding: 1rem;
+}
+
+.cs1col2,.cs1col3,.cs2col1,.cs2col2,.cs3col2,.cs3col3,.cs4col1,.cs4col3{
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  gap: 2rem;
+}
+
+.cs1col2{
+  width: 100%;
+}
+.cs1col3{
+  width: 100%;
+}
+.c1bx2{
+  height: 50%;
+}
+.c1bx4{
+  height: 150%;
+}
+
+
+.cs2col1{
+  width: 100%;
+}
+.cs2col2{
+  width: 40%;
+}
+.c2bx1{
+  height: 30%;
+}
+
+
+
+.cs3col2{
+  width: 20%;
+}
+.cs3col3{
+  width: 30%;
+}
+
+
+.cs4col1{
+  width: 25%;
+}
+.cs4col3{
+  width: 25%;
+}
+.c4bx1{
+  height: 50%;
+}
+
+
+
+
+
+
+.services-heading{
+  display: block;
+  padding: 8rem 3rem;
+}
+.offer_container{
+  padding: 0rem 2rem
+}
+.each_offers{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-bottom: 2rem;
+  padding-bottom:2rem;
+}
+.serv_title{
+  top:0rem;
+}
+.serv_title h1{
+  font-size: 6rem;
+  top: 0rem;
+  text-align: start;
+
+}
+.sub_serv{
+  position: relative;
+  gap: 2rem;
+  opacity: 1;
+  justify-content: start;
+  flex-wrap: wrap;
+  bottom: 0rem;
+}
+.sub_serv p{
+  padding: 1.2rem 2.4rem;
 }
 
 
