@@ -2236,8 +2236,53 @@ padding: 8rem 3rem ;
 }
 
 
+.workhead{
+  padding: 8rem 3rem;
+  min-height: 85vh;
+  gap: 4rem;
+  justify-content: space-evenly;
+}
+.wrk1_bt{
+  flex-direction: column;
+}
+
+.con_page1{
+  flex-direction: column;
+}
+.con_head{
+  padding: 8rem 3rem;
+  gap: 4rem;
+}
+.con_p2{
+padding: 8rem 3rem;
+}
+.top_con{
+  flex-direction: column;
+}
+.submit_btn{
+  bottom: -8rem;
+  text-align: center;
+}
+.submit_btn a{
+  padding: 2rem 10rem;
+}
+
+.career{
+  padding: 8rem 3rem;
+}
+.car_container{
+  flex-direction: column;
+}
+
+.car_con{
+  min-height: 30vh;
+  border-radius: 1rem;
+}
 
 
+.con_footer{
+  padding: 8rem 3rem;
+}
 
 .ftr{
   padding: 8rem 3rem;
@@ -2248,6 +2293,10 @@ padding: 8rem 3rem ;
 .ft_col1, .ft_col2{
   width: 100%;
 }
+.copyrights{
+  flex-direction: column;
+}
+
 
 
 }

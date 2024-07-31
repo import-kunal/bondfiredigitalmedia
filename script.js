@@ -620,7 +620,7 @@ ScrollTrigger.matchMedia({
     });
 
 
-// ===============================CASE STUDIES
+// ===============================CASE STUDIES=======================================
     
     if (document.querySelector(".cstdy")) {
       let sections = gsap.utils.toArray(".cstdycontainer");
@@ -728,6 +728,38 @@ ScrollTrigger.matchMedia({
           y: 0,
           duration: 0.5,
         });
+
+
+// ==========================SERVICE PAGE ================================================
+        
+if (document.querySelector(".service_page")) {
+  var t4 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".service_page",
+      start: "-40% top",
+      end: "10% bottom",
+      scrub: 0.1,
+      // markers:true,
+    },
+  });
+  t4.to("#main", { backgroundColor: "#151515", duration: 0.3 });
+}
+// ========================================CAREER PAGE ====================================================================
+
+if (document.querySelector(".career")) {
+  var t4 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".career",
+      start: "-30% 30%",
+      end: "bottom bottom",
+      scrub: 0.1,
+      markers: true,
+    },
+  });
+  t4.to("#main", { backgroundColor: "#151515", duration: 0.1 });
+}
+
+
 
 
   },
