@@ -438,6 +438,9 @@ nav .nav-r {
   align-items: center;
   height: 100%;
 }
+.google_search{
+  display: none;
+}
 .header-content {
   text-align: center;
   padding: 5rem 0rem;
@@ -1884,8 +1887,8 @@ margin: 4rem 0rem 2rem;
     font-weight: normal;
   }
   p{
-    font-size: 1.6rem;
-    font-family: "bondfire-me";
+    font-size: 1.8rem;
+    font-family: "bondfire-re";
   }
   a {
     font-size: 1.8rem;
@@ -1948,7 +1951,9 @@ margin: 4rem 0rem 2rem;
 .head_wrapper{
   padding: 2rem;
   justify-content: start;
+  flex-direction: column;
 }
+
 .header-content h1 {
   font-size: 6rem;
   line-height: 1.3;
@@ -1979,6 +1984,20 @@ margin: 4rem 0rem 2rem;
   flex-direction: column;
   align-items: end;
   gap: 1rem;
+}
+.google_search{
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: black;
+}
+.google_search video{
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
 }
 
 .page2{
@@ -2122,14 +2141,14 @@ font-size: 5rem;
 }
 .sub_serv{
   position: relative;
-  gap: 2rem;
+  gap: 1rem;
   opacity: 1;
   justify-content: start;
   flex-wrap: wrap;
   bottom: 0rem;
 }
 .sub_serv p{
-  padding: 1.2rem 2.4rem;
+  padding: 1rem 2rem;
 }
 
 .wk{
@@ -2224,6 +2243,8 @@ font-size: 5rem;
   height: 12vh;
   padding: 0rem 1rem;
 }
+
+
 
 .reviews{
   padding: 8rem 3rem;

@@ -43,24 +43,6 @@ document.addEventListener('DOMContentLoaded', function () {
   function enableScroll() {
     document.body.style.overflow = '';
   }
-  // =======================================Earth===========================
-
-  // var svgObject = document.getElementById('svg_earth');
-        
-  // svgObject.addEventListener('load', function() {
-  //     var svgDoc = svgObject.contentDocument;
-  //     var svgElement = svgDoc.querySelector('svg');
-
-      
-      
-  //     // Apply CSS styles
-  //     var ellipse = svgElement.querySelector('ellipse');
-  //     if (ellipse) {
-  //         ellipse.style.fill = '#222222';
-         
-  //     }
-     
-  // });
 
   // ====================================Handle text rotation==============================================
   const textElement = document.querySelector('.p2conn p');
@@ -91,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
     modal.style.display = 'none';
     videoContainer.pause();
     videoContainer.src = '';
-    videoContainer.muted = false; // Unmute video on close
+    videoContainer.muted = false; 
     customControls.style.display = 'none';
     enableScroll();
   }
@@ -638,7 +620,7 @@ ScrollTrigger.matchMedia({
       });
     }
 
-    // ====================================================Industry expertise animation =================================================
+    // =======================Industry expertise animation =================================================
 
     if (document.querySelector(".wk")) {
       var t7 = gsap.timeline({
@@ -646,10 +628,10 @@ ScrollTrigger.matchMedia({
           trigger: ".wk",
           start: "top top",
           end: "bottom bottom",
-          scrub: 2,
+          scrub: 2.5,
           pin: true,
           pinSpacing: false,
-          // markers: true,
+          markers: true,
         },
       });
 
@@ -657,8 +639,8 @@ ScrollTrigger.matchMedia({
         ".hosp",
         {
           y: "0%",
-          stagger: 0.5,
-          onStart: () => gsap.to(".h6-hosp", { color: "#ffa700" }),
+          stagger: 1,
+          onStart: () => gsap.to(".h6-hosp", { color: "#ffa700"}),
           onReverseComplete: () => gsap.to(".h6-hosp", { color: "white" }),
         },
         "anim"
@@ -668,7 +650,7 @@ ScrollTrigger.matchMedia({
         ".realst",
         {
           y: "-40vh",
-          stagger: 0.5,
+          stagger: 2,
           onStart: () => gsap.to(".h6-realst", { color: "#ffa700" }),
           onReverseComplete: () => gsap.to(".h6-realst", { color: "white" }),
         },
@@ -679,7 +661,7 @@ ScrollTrigger.matchMedia({
         ".fintech",
         {
           y: "-80vh",
-          stagger: 0.5,
+          stagger: 3,
           onStart: () =>
             gsap.to(".h6-fintech", { color: "#ffa700", delay: 0.5 }),
           onReverseComplete: () => gsap.to(".h6-fintech", { color: "white" }),
@@ -739,7 +721,7 @@ if (document.querySelector(".service_page")) {
       start: "-40% top",
       end: "10% bottom",
       scrub: 0.1,
-      // markers:true,
+      markers:true,
     },
   });
   t4.to("#main", { backgroundColor: "#151515", duration: 0.3 });
