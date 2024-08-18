@@ -407,9 +407,11 @@ document.addEventListener("DOMContentLoaded", function () {
         },
       });
       tl.to(".navbar", { y: -150 }, "anim")
+        .to(".head_top", { x: -500 }, "anim")
         .to(".head_one", { x: -25, y: -25 }, "anim")
         .to(".head_two", { x: 50 }, "anim")
         .to(".head_three", { x: -25, y: 25 }, "anim")
+        .to(".head_three h5", { x: 500 }, "anim")
         .to(".split_one", { height: "100vh" }, "anim")
         .to(".split_two", { height: "100vh" }, "anim");
 
@@ -472,6 +474,35 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       // ===============================CASE STUDIES=======================================
+
+      if (document.querySelector(".p_g3")) {
+        let caseStudies = gsap.utils.toArray(".casestudy");
+    
+        // Create a timeline for better control over multiple animations
+        let timeline = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".p_g3",
+                pin: ".p_g3container", // Pin the container while scrolling
+                scrub: 1, // Scrub value controls the smoothness of the scroll
+                snap: 1 / (caseStudies.length - 1), // Snap to each section
+                start: "top top",
+                end: () => "+=" + document.querySelector(".p3r").offsetWidth
+            }
+        });
+    
+        // Animate the horizontal scroll of the case studies
+        timeline.to(caseStudies, {
+            xPercent: -100 * (caseStudies.length - 1),
+            ease: "none"
+        });
+    
+        // Animate the width of the load controller
+        timeline.to("#loadcontroller", {
+            width: "100%", // Animate width from 0% to 100%
+            ease: "none"
+        }, 0); // Start this animation at the same time as the scroll
+    }
+    
 
       if (document.querySelector(".cstdy")) {
         let sections = gsap.utils.toArray(".cstdycontainer");

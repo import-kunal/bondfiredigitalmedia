@@ -469,12 +469,12 @@ nav .nav-r {
   height: 100%;
   z-index: 2;
 }
-.feelfree{
+.feelfree {
   position: absolute;
   top: 10rem;
   right: 2rem;
 }
-.feelfree h5{
+.feelfree h5 {
   font-family: "bondfire-sc";
   font-size: 3rem;
   color: #1574d8;
@@ -544,26 +544,27 @@ nav .nav-r {
   width: 100%;
   height: auto;
 } */
- .p_g1{
+.p_g1 {
   width: 100vw;
   height: 100%;
   /* border-top: 0.2rem solid #151515; */
   padding-top: 2rem;
- }
- .p_g1containger{
+}
+.p_g1containger {
   display: flex;
   justify-content: center;
   height: 6rem;
   gap: 8rem;
- }
+}
 
- .p_g1containger div img{
+.p_g1containger div img {
   width: 100%;
   height: 100%;
   object-fit: contain;
- }
- .p_g1 img[alt="redbull"] {
-padding: 0.8rem 0rem;}
+}
+.p_g1 img[alt="redbull"] {
+  padding: 0.8rem 0rem;
+}
 
 .toproller {
   margin-left: 4rem;
@@ -825,16 +826,16 @@ padding: 0.8rem 0rem;}
 }
 
 /* ================================================================== HOME_PAGE CASE_STUDIES=================================================================== */
-.p_g3{
-  z-index:4 ;
+.p_g3 {
+  z-index: 4;
   position: relative;
   width: 100vw;
   min-height: 100vh;
 }
-.p_g3container{
+.p_g3container {
   display: flex;
 }
-.p3l{
+.p3l {
   position: relative;
   position: sticky;
   width: 30vw;
@@ -844,14 +845,14 @@ padding: 0.8rem 0rem;}
   gap: 4rem;
   top: 0;
 }
-.p3l a{
+.p3l a {
   background: #ffa700;
   color: #f6f6f6;
   border-radius: 10rem;
   padding: 1.5rem 3rem;
   text-align: center;
 }
-.p3r{
+.p3r {
   width: 70vw;
   min-height: 100vh;
   padding: 0rem 8rem 2rem 4rem;
@@ -860,7 +861,7 @@ padding: 0.8rem 0rem;}
   flex-direction: column;
   gap: 4rem;
 }
-.c_loader{
+.c_loader {
   position: absolute;
   width: 0.2rem;
   height: 80vh;
@@ -868,48 +869,47 @@ padding: 0.8rem 0rem;}
   right: -1rem;
   top: 8rem;
 }
-#loadcontroller{
+#loadcontroller {
   width: 100%;
   height: 0%;
   position: relative;
   background-color: white;
 }
-.casestudy{
-display: flex;
-flex-direction: column;
-gap: 4rem;
-position: relative;
-padding-top: 8rem;
-border-top: 0.1rem solid white;
+.casestudy {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  position: relative;
+  padding-top: 8rem;
+  border-top: 0.1rem solid white;
 }
 .p3r .casestudy:first-of-type {
   /* Your styles here */
   border-top: 0.1rem solid rgba(255, 255, 255, 0);
 }
-.casehead{
+.casehead {
   display: flex;
 }
-.caseserv{
+.caseserv {
   display: flex;
   gap: 1rem;
   padding-top: 1rem;
 }
-.caseserv p{
-  padding: 1rem 2rem ;
+.caseserv p {
+  padding: 1rem 2rem;
   border: 0.1rem solid #f6f6f6;
   border-radius: 10rem;
 }
-.caseimage{
+.caseimage {
   width: 100%;
   height: 80vh;
   border-radius: 0.5rem;
   overflow: hidden;
 }
-.caseimage img{
+.caseimage img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  
 }
 /* ====================HOME_PAGE SERVICE=============================================================================================== */
 
@@ -1650,10 +1650,10 @@ border-top: 0.1rem solid white;
   align-items: center;
   gap: 2rem;
 }
-.worksvg{
+.worksvg {
   display: inline;
- }
-.worksvg svg{
+}
+.worksvg svg {
   width: 2rem;
   height: 2rem;
 }
@@ -1701,8 +1701,6 @@ border-top: 0.1rem solid white;
   height: 100%;
   object-fit: cover;
 }
-
-
 
 .casestudies {
   min-height: 100vh;
@@ -1847,7 +1845,6 @@ border-top: 0.1rem solid white;
   grid-column: span 3;
   grid-row: span 6;
 }
-
 
 /* =======================================================CONTACT US================================================================================= */
 .con_nav {
@@ -2251,13 +2248,13 @@ textarea:focus {
     justify-content: start;
     flex-direction: column;
   }
-  .feelfree h5{
+  .feelfree h5 {
     font-size: 2.5rem;
   }
-  .header-content{
+  .header-content {
     width: 100%;
   }
-  .header-content h5{
+  .header-content h5 {
     font-size: 2.5rem;
   }
   .header-content h1 {
@@ -2304,10 +2301,8 @@ textarea:focus {
     width: 100%;
     height: 100%;
   }
-  .p_g1{
 
-  }
-  .p_g1containger{
+  .p_g1containger {
     gap: 4rem;
     height: 4rem;
   }
@@ -2342,6 +2337,56 @@ textarea:focus {
   }
   .p2conn span {
     transform-origin: 0% 16vw;
+  }
+
+  .p_g3container {
+    display: flex;
+    flex-direction: column;
+  }
+  .p3l {
+    width: 100vw;
+    padding: 4rem;
+    gap: 2rem;
+  }
+  .c_loader {
+    width: 100vw;
+    height: 0.2rem;
+    top: auto;
+    bottom: 0rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  #loadcontroller{
+    width: 0%;
+    height: 100%;
+  }
+  .p3r {
+    width: 100vw;
+    padding: 0rem 0rem;
+    flex-direction: row;
+    gap: 0rem;
+    min-height: auto;
+    overflow: hidden;
+  }
+  .casehead {
+    flex-direction: column;
+    width: 100vw;
+    padding: 4rem 3rem;
+    padding-bottom: 1rem;
+  }
+  .casestudy {
+    padding: 0rem;
+    border: none;
+    padding-right: 0rem;
+    gap: 2rem;
+    border-right: 1px solid white;
+  }
+  .caseimage {
+    height: auto;
+    padding: 0rem 3rem;
+  }
+  .caseserv p{
+    font-size: 1.6rem;
   }
 
   .cstdycontainer {
@@ -2459,8 +2504,11 @@ textarea:focus {
   }
 
   .wk {
-    padding: 10rem 3rem !important ;
+    padding: 8rem 3rem !important ;
     display: block;
+  }
+  .sp{
+    width: 100%;
   }
   .industries {
     width: 100%;
@@ -2547,6 +2595,7 @@ textarea:focus {
   }
   .cli_grid {
     flex-direction: column;
+    width: 100%;
   }
   .cli_container {
     height: 12vh;
