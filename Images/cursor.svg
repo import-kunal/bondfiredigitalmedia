@@ -1,0 +1,64 @@
+<svg width="24" height="39" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+ <style>
+        @keyframes rotateCursor {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes colorChange {
+            0% {
+                fill: #ffa700; /* Initial color */
+            }
+            33.33% {
+                fill: #ff0059; /* Change to a different color */
+            }
+          
+            66.66% {
+                fill: #1574d8; /* Change to another color */
+            }
+            100% {
+                fill: #ffa700; /* Back to initial color */
+            }
+        }
+
+        #cursormono {
+            animation: rotateCursor 4s linear infinite, colorChange 4s linear infinite;
+            transform-origin: center;
+            transform-box: fill-box;
+            will-change: transform, fill; /* Hint the browser to optimize for both transformation and color changes */
+        }
+    </style>
+
+
+    <g id="cursor" clip-path="url(#clip0_257_9)">
+        <path id="cursormono" d="M3.18307 10.541C3.2809 10.3824 3.40759 10.3423 3.62185 10.1822C3.542 10.0831 3.4912 10.0161 3.40555 9.90198C3.30062 9.9769 3.18715 10.1652 2.9959 10.2497C2.84586 10.316 2.69318 10.2449 1.47786 10.2794C1.46458 9.63574 1.45219 9.27721 1.43409 8.86033C2.07303 8.84837 2.65538 8.75437 2.8328 8.82459C3.01022 8.89482 2.99557 8.9437 3.26732 9.15067C3.33593 9.04646 3.38848 8.96572 3.45419 8.85398C3.27396 8.73293 3.09067 8.69092 2.97457 8.51928C2.90929 8.41462 2.84294 8.11142 2.54176 7.32757L3.8162 6.8379C4.1523 7.62563 4.31174 7.9536 4.3042 8.08625C4.29667 8.21889 4.16788 8.57976 4.16788 8.57976C4.16788 8.57976 4.38461 8.64353 4.49806 8.67779C4.55534 8.41359 4.52212 8.28363 4.60095 8.16252C4.70176 7.96809 5.67251 7.23182 5.67251 7.23182C5.67251 7.23182 6.27367 7.92636 6.61492 8.31422C6.1528 8.69937 5.55346 9.29294 5.41369 9.3207C5.26374 9.34371 4.89847 9.32837 4.89847 9.32837L4.92542 9.6813C4.92542 9.6813 5.29964 9.58941 5.49601 9.64371C5.69238 9.698 6.7606 10.4553 6.7606 10.4553C6.7606 10.4553 6.28166 11.2534 6.04074 11.6487C5.28042 11.2143 4.93105 11.0899 4.83564 10.9268C4.74023 10.7636 4.72849 10.6479 4.66188 10.4745L4.34145 10.5976C4.39937 10.7484 4.53591 10.8862 4.54417 11.1252C4.52777 11.3218 4.43284 11.4881 4.16914 12.3679C3.67461 12.2119 3.29643 12.0977 2.83972 11.9531C3.0907 10.8879 3.07439 10.7904 3.18307 10.541Z" fill="#ffa700"/>
+        <path id="cursorarrow" d="M-0.091767 9.16224C-0.053648 8.95358 -0.229923 4.17674 0.107422 0L7.30398 5.87918L2.69318 5.76676L-0.091767 9.16224Z" fill="#ffa700"/>
+    </g>
+
+    <defs>
+        <clipPath id="clip0_257_9">
+            <rect width="24" height="39" fill="white"/>
+        </clipPath>
+    </defs>
+
+    <script type="text/javascript">
+    window.addEventListener('load', () => {
+        const path = document.querySelector('#cursormono');
+        const bbox = path.getBBox(); // Get the bounding box of the path
+
+        // Calculate the center of the bounding box
+        const centerX = bbox.x + bbox.width / 2;
+        const centerY = bbox.y + bbox.height / 2;
+
+        // Apply the transform-origin to the path element
+        path.style.transformOrigin = `${centerX}px ${centerY}px`;
+
+        // Apply hardware acceleration
+        path.style.transform += ' translateZ(0)';
+    });
+    </script>
+</svg>
