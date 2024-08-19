@@ -415,14 +415,21 @@ document.addEventListener("DOMContentLoaded", function () {
         .to(".split_one", { height: "100vh" }, "anim")
         .to(".split_two", { height: "100vh" }, "anim");
 
+ 
+
+       
+       
+
+
+        
       // ====================================================PAGE 2 HAMBURGER MENU  =================================================
       var gridshow = gsap.timeline({
         scrollTrigger: {
           trigger: ".page2",
-          start: "-50% 50%",
+          start: "-50% 30%",
           end: "bottom bottom",
           scrub: 3,
-          markers:true,
+          // markers:true,
         },
       });
 
@@ -432,9 +439,12 @@ document.addEventListener("DOMContentLoaded", function () {
         // markers: true,
         onStart: function () {
           gsap.set(".gridhoverbg", { display: "grid" });
+          gsap.set(".dot-grid ", { display: "grid", opacity:1 });
         },
         onReverseComplete: function () {
           gsap.set(".gridhoverbg", { display: "none", immediateRender: true });
+          gsap.set(".dot-grid ", { display: "none", opacity:0 });
+
         },
       });
 

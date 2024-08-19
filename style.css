@@ -557,13 +557,16 @@ nav .nav-r {
   gap: 8rem;
 }
 
-.p_g1containger div img {
+.p_g1containger .hmpglogo img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 .p_g1 img[alt="redbull"] {
   padding: 0.8rem 0rem;
+}
+.duplicate{
+  display: none;
 }
 
 .toproller {
@@ -650,8 +653,8 @@ nav .nav-r {
 }
 
 .dot-grid {
-  display: grid;
-
+  display: none;
+  opacity: 0;
   width: 100%;
   height: 100%;
 }
@@ -2250,9 +2253,12 @@ textarea:focus {
   }
   .feelfree h5 {
     font-size: 2.5rem;
+    display: none;
   }
   .header-content {
     width: 100%;
+    padding: 2rem;
+    padding-bottom: 0rem;
   }
   .header-content h5 {
     font-size: 2.5rem;
@@ -2266,14 +2272,14 @@ textarea:focus {
   }
 
   .head_one {
-    margin-bottom: 2rem;
+    margin-bottom: 0rem;
   }
   .head_two {
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    margin-bottom: 2rem;
+    margin-bottom: 0rem;
   }
   .head_two img {
     width: 10rem;
@@ -2291,21 +2297,163 @@ textarea:focus {
     display: block;
     position: relative;
     width: 100%;
-    height: 100%;
-    border-radius: 1rem;
+    height: 40vh;
+    border-radius: 0rem;
     overflow: hidden;
     background-color: black;
   }
-  .google_search video {
+  .storyboard{
+    position: relative;
+    padding: 2rem;
+  }
+  .toploader{
+    display: flex;
+    gap: 0.4rem;
+  }
+  .toploader .progressstry{
+    width: 100%;
+    height: 0.2rem;
+    background-color: rgb(48, 48, 48);
+    border-radius: 1rem;
+    }
+    .toploader .progressstry .storyinloader{
+      width: 0%;
+      height: 100%;
+      position: relative;
+      left: 0rem;
+      background: white;
+      transition: width 10s linear;
+    }
+    .bondfireimage{
+      display: flex;
+      width: 100%;
+      /* height: 4rem; */
+      padding: 1.5rem 1rem 1rem 0rem ;
+      gap: 2rem;
+      justify-content: space-between;
+    }
+    .secondlayerstory{
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .storytitle{
+      display: flex;
+      flex-direction: column;
+    }
+    .storytitle h6{
+      font-size: 1.6rem;
+    }
+    .storytitle p{
+      font-size: 1.2rem;
+      color: #878787;
+    }
+    .bfmimg{
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 50rem;
+      background-color: white;
+      padding: 0.5rem;
+    }
+    .bfmimg svg{
+      width: 100%;
+      height: 100%;
+
+    }
+    .threedots{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+    .threedots div{
+      width: 3px ;
+      height: 3px ;
+      background: white;
+      border-radius: 5rem;
+    }
+    .storymain{
+      text-align: center;
+    }
+    .storymain > div {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    
+    .storymain > div.active {
+      display: block;
+      opacity: 1;
+    }
+    
+    .storyinloader {
+      transition: width 10s linear;
+    }
+
+    .strategydisplay, .designdisplay, .developmentdisplay {
+      display: none;
+  }
+  
+  .active-display {
+      display: block;
+  }
+  .n_a_p{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0rem;
+    display: flex;
+    top: 5rem;
+  }
+  .prev, .next{
+    width: 100%;
+    height: 100%;
+    background-color: red;
+  }
+  .next{
+    background-color: rebeccapurple;
+  }
+  
+  /* .google_search video {
     object-fit: contain;
     width: 100%;
     height: 100%;
+  } */
+  .p_g1{
+    padding: 2rem ;
+    white-space: nowrap;
+    overflow: hidden;
   }
 
   .p_g1containger {
     gap: 4rem;
-    height: 4rem;
+    height: auto;
+    will-change: transform;
+    justify-content: flex-start;
+    animation: marquee 10s linear infinite;
+    /* flex-direction: row-reverse; */
+    animation-delay: 2s;
   }
+  .p_g1 img[alt="redbull"] {
+    padding: 0.8rem 1rem;
+}
+  .hmpglogo{
+    width: 12rem ;
+    height: auto;
+    flex-shrink: 0; /* Prevent logos from shrinking */
+  }
+
+  .duplicate{
+    display: block;
+  }
+  /* Keyframes for the marquee effect */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-165%);
+  }
+}
   .page2 {
     margin-top: 100vh;
   }
@@ -2322,6 +2470,9 @@ textarea:focus {
   }
   .p2_txt {
     display: block;
+  }
+  .p2rbtm h3{
+    margin-bottom: 0rem;
   }
   .p2_left {
     flex-direction: row;
@@ -2388,6 +2539,9 @@ textarea:focus {
   .caseserv p{
     font-size: 1.6rem;
   }
+
+
+
 
   .cstdycontainer {
     height: 90vh;

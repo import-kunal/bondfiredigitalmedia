@@ -32,6 +32,85 @@
 //       return false;
 //   }
 // }
+// Selecting the 'prev' and 'next' div elements
+const prevButton = document.querySelector('.prev');
+const nextButton = document.querySelector('.next');
+
+// Adding event listeners to log messages on click
+prevButton.addEventListener('click', () => {
+    console.log('Previous button clicked');
+});
+
+nextButton.addEventListener('click', () => {
+    console.log('Next button clicked');
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const sections = [
+    { display: ".strategydisplay", loader: "#strategyprogress" },
+    { display: ".designdisplay", loader: "#designprogress" },
+    { display: ".developmentdisplay", loader: "#developmentprogress" }
+  ];
+
+  let currentStep = 0;
+
+  function activateSection(step) {
+    if (step === sections.length) {
+      // Reset all loaders and hide all sections when the last section completes
+      sections.forEach(section => {
+        const displayElement = document.querySelector(section.display);
+        const loaderElement = document.querySelector(section.loader);
+
+        displayElement.style.display = "none"; // Hide section
+        loaderElement.style.transition = "none"; // Disable transition to reset
+        loaderElement.style.width = "0%"; // Reset loader width immediately
+      });
+
+      // Restart the loop from the first section
+      step = 0;
+
+      // Small delay to ensure transition reset
+      setTimeout(() => {
+        sections.forEach(section => {
+          const loaderElement = document.querySelector(section.loader);
+          loaderElement.style.transition = ""; // Re-enable transition
+        });
+
+        activateSection(step); // Start the first section
+      }, 50);
+
+      return; // Exit function to wait for reset
+    }
+
+    // Hide previous section and show the current one
+    if (step > 0) {
+      document.querySelector(sections[step - 1].display).style.display = "none";
+    }
+    
+    const displayElement = document.querySelector(sections[step].display);
+    const loaderElement = document.querySelector(sections[step].loader);
+
+    if (displayElement && loaderElement) {
+      displayElement.style.display = "block"; // Show current section
+      displayElement.classList.add('active');
+      loaderElement.style.width = "100%";
+
+      // Move to the next step after 10 seconds
+      setTimeout(() => activateSection(step + 1), 10000);
+    } else {
+      console.error('Element not found for step:', step);
+    }
+  }
+
+  activateSection(currentStep);
+});
+
+
+
+
+
 
 const canvas = document.getElementById('drawingCanvas');
 
