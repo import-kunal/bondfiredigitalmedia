@@ -402,7 +402,7 @@ document.addEventListener("DOMContentLoaded", function () {
           trigger: ".header-content",
           start: "100% 40%",
           end: "100% 0%",
-          markers: true,
+          // markers: true,
           scrub: 1,
         },
       });
