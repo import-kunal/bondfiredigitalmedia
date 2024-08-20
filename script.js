@@ -45,6 +45,19 @@
 //     console.log('Next button clicked');
 // });
 
+function updateViewportSize() {
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+  
+  document.getElementById('widthofviewport').innerText = `Width: ${width}px`;
+  document.getElementById('heightofviewport').innerText = `Height: ${height}px`;
+}
+
+// Call the function once to set the initial values
+updateViewportSize();
+
+// Optional: Update the size dynamically when the window is resized
+window.addEventListener('resize', updateViewportSize);
 
 
 document.addEventListener("DOMContentLoaded", function() {

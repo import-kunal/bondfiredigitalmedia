@@ -37,9 +37,12 @@ document.addEventListener("DOMContentLoaded", function () {
         // markers: true,
         onStart: function () {
           gsap.set(".gridhoverbg", { display: "grid" });
+          gsap.set(".dot-grid ", { display: "grid", opacity:1 });
         },
         onReverseComplete: function () {
           gsap.set(".gridhoverbg", { display: "none", immediateRender: true });
+          gsap.set(".dot-grid ", { display: "none", opacity:0 });
+
         },
       });
 

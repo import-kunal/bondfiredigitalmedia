@@ -351,6 +351,12 @@ main {
 
   /* overflow-y: hidden !important; */
 }
+.viewport{
+  position: absolute;
+  top: 10rem;
+  z-index: 100;
+  color: black;
+}
 .homepg {
   min-height: 100vh;
   position: fixed;
