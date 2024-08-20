@@ -400,8 +400,8 @@ document.addEventListener("DOMContentLoaded", function () {
       var tl = gsap.timeline({
         scrollTrigger: {
           trigger: ".header-content",
-          start: "80% 40%",
-          end: "100% 0",
+          start: "100% 40%",
+          end: "100% 0%",
           markers: true,
           scrub: 1,
         },
