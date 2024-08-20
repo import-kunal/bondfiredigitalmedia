@@ -413,7 +413,8 @@ document.addEventListener("DOMContentLoaded", function () {
         .to(".head_three", { x: -25, y: 25 }, "anim")
         .to(".head_three h5", { x: 500 }, "anim")
         .to(".split_one", { height: "100vh" }, "anim")
-        .to(".split_two", { height: "100vh" }, "anim");
+        .to(".split_two", { height: "100vh" }, "anim")
+        .to(".google_search", { y: 500, opacity:0 }, "anim");
 
  
 

@@ -32,18 +32,18 @@
 //       return false;
 //   }
 // }
-// Selecting the 'prev' and 'next' div elements
-const prevButton = document.querySelector('.prev');
-const nextButton = document.querySelector('.next');
+// // Selecting the 'prev' and 'next' div elements
+// const prevButton = document.querySelector('.prev');
+// const nextButton = document.querySelector('.next');
 
-// Adding event listeners to log messages on click
-prevButton.addEventListener('click', () => {
-    console.log('Previous button clicked');
-});
+// // Adding event listeners to log messages on click
+// prevButton.addEventListener('click', () => {
+//     console.log('Previous button clicked');
+// });
 
-nextButton.addEventListener('click', () => {
-    console.log('Next button clicked');
-});
+// nextButton.addEventListener('click', () => {
+//     console.log('Next button clicked');
+// });
 
 
 
@@ -55,57 +55,54 @@ document.addEventListener("DOMContentLoaded", function() {
   ];
 
   let currentStep = 0;
+  let autoSlideTimeout;
 
-  function activateSection(step) {
-    if (step === sections.length) {
-      // Reset all loaders and hide all sections when the last section completes
-      sections.forEach(section => {
-        const displayElement = document.querySelector(section.display);
-        const loaderElement = document.querySelector(section.loader);
+  function updateSection(step) {
+    clearTimeout(autoSlideTimeout); // Clear the previous auto slide timeout
 
-        displayElement.style.display = "none"; // Hide section
-        loaderElement.style.transition = "none"; // Disable transition to reset
-        loaderElement.style.width = "0%"; // Reset loader width immediately
-      });
+    // Reset all sections and progress bars
+    sections.forEach((section, index) => {
+      const displayElement = document.querySelector(section.display);
+      const loaderElement = document.querySelector(section.loader);
+      
+      displayElement.style.display = "none"; // Hide all sections
+      loaderElement.style.transition = "none";  // Disable transition for instant reset
+      loaderElement.style.width = index < step ? "100%" : "0%"; // Set progress bars
+    });
 
-      // Restart the loop from the first section
-      step = 0;
-
-      // Small delay to ensure transition reset
-      setTimeout(() => {
-        sections.forEach(section => {
-          const loaderElement = document.querySelector(section.loader);
-          loaderElement.style.transition = ""; // Re-enable transition
-        });
-
-        activateSection(step); // Start the first section
-      }, 50);
-
-      return; // Exit function to wait for reset
-    }
-
-    // Hide previous section and show the current one
-    if (step > 0) {
-      document.querySelector(sections[step - 1].display).style.display = "none";
-    }
+    // Show the current section and fill its progress bar
+    const currentSection = sections[step];
+    const displayElement = document.querySelector(currentSection.display);
+    const loaderElement = document.querySelector(currentSection.loader);
     
-    const displayElement = document.querySelector(sections[step].display);
-    const loaderElement = document.querySelector(sections[step].loader);
+    displayElement.style.display = "block"; // Display the current section
+    setTimeout(() => {
+      loaderElement.style.transition = "";  // Re-enable transition
+      loaderElement.style.width = "100%"; // Fill the progress bar
+    }, 50);
 
-    if (displayElement && loaderElement) {
-      displayElement.style.display = "block"; // Show current section
-      displayElement.classList.add('active');
-      loaderElement.style.width = "100%";
-
-      // Move to the next step after 10 seconds
-      setTimeout(() => activateSection(step + 1), 10000);
-    } else {
-      console.error('Element not found for step:', step);
-    }
+    // Set up auto-slide to the next section after 10 seconds
+    autoSlideTimeout = setTimeout(() => nextStep(), 15000);
   }
 
-  activateSection(currentStep);
+  function nextStep() {
+    currentStep = (currentStep + 1) % sections.length; // Loop back to first section if at the end
+    updateSection(currentStep);
+  }
+
+  function prevStep() {
+    currentStep = (currentStep - 1 + sections.length) % sections.length; // Loop back to last section if at the start
+    updateSection(currentStep);
+  }
+
+  // Attach event listeners to next and prev buttons
+  document.querySelector('.next').addEventListener('click', nextStep);
+  document.querySelector('.prev').addEventListener('click', prevStep);
+
+  // Initial activation
+  updateSection(currentStep);
 });
+
 
 
 

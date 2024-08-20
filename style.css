@@ -2261,7 +2261,7 @@ textarea:focus {
     padding-bottom: 0rem;
   }
   .header-content h5 {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
   }
   .header-content h1 {
     font-size: 6rem;
@@ -2293,6 +2293,9 @@ textarea:focus {
     align-items: end;
     gap: 1rem;
   }
+  #drawingCanvas{
+    display: none;
+  }
   .google_search {
     display: block;
     position: relative;
@@ -2301,6 +2304,7 @@ textarea:focus {
     border-radius: 0rem;
     overflow: hidden;
     background-color: black;
+    z-index: 2;
   }
   .storyboard{
     position: relative;
@@ -2322,7 +2326,7 @@ textarea:focus {
       position: relative;
       left: 0rem;
       background: white;
-      transition: width 10s linear;
+      transition: width 15s linear;
     }
     .bondfireimage{
       display: flex;
@@ -2376,23 +2380,97 @@ textarea:focus {
     }
     .storymain > div {
       display: none;
-      opacity: 0;
+      /* opacity: 0; */
       transition: opacity 0.5s ease;
-    }
-    
-    .storymain > div.active {
+  }
+  
+  .storymain > div.active {
       display: block;
       opacity: 1;
-    }
+  }
+  .progress-bar {
+    width: 0%;
+    height: 5px; 
+    transition: width 15s linear; 
+}
     
     .storyinloader {
-      transition: width 10s linear;
+      transition: width 15s linear;
     }
 
     .strategydisplay, .designdisplay, .developmentdisplay {
-      display: none;
+      width: 100%;
+      overflow: hidden;
+  }
+    .strategydisplay  h6, .designdisplay h6, .developmentdisplay h6 {
+    background-color: white;
+    color: rgb(0, 0, 0);
+    border-radius: 0.5rem;
+    font-family: "bondfire-bd";
+    padding: 0.5rem;
   }
   
+   .strategyservices,.Designservices, .Developmentservices{
+    display: flex;
+    width: 100%;
+    gap: 2rem;
+    padding: 1rem 0rem;
+    position: relative;
+    animation: moveLeft 15s linear infinite;
+
+   }
+   @keyframes moveLeft {
+    0% {
+        transform: translateX(20%);
+    }
+    100% {
+        transform: translateX(-180%);
+    }
+}
+   .Designservices, .Developmentservices{
+
+    animation: moveLeft1 15s linear infinite;
+
+   }
+   @keyframes moveLeft1 {
+    0% {
+        transform: translateX(20%);
+    }
+    100% {
+        transform: translateX(-250%);
+    }
+}
+   
+
+  .storyloop{
+    width: 25rem;
+    height: 16rem;
+    flex-shrink: 0; 
+    min-width: 25rem; 
+    min-height: 16rem; 
+    position: relative;
+  }
+  .storyloop img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .storyloop::before{
+   content: "";
+   width: 100%;
+   height: 30%;
+   position: absolute;
+   top: 0rem;
+   left: 0rem;
+   background: rgb(21,21,21);
+background: linear-gradient(180deg, rgba(21,21,21,1) 30%, rgba(0,0,0,0) 100%);
+
+  }
+  .storyloop p{
+    position: absolute;
+    width: 100%;
+    top: 1rem;
+  }
   .active-display {
       display: block;
   }
@@ -2407,11 +2485,12 @@ textarea:focus {
   .prev, .next{
     width: 100%;
     height: 100%;
-    background-color: red;
+    background-color: transparent;
   }
   .next{
-    background-color: rebeccapurple;
+    background-color: transparent;
   }
+
   
   /* .google_search video {
     object-fit: contain;
@@ -2488,6 +2567,14 @@ textarea:focus {
   }
   .p2conn span {
     transform-origin: 0% 16vw;
+  }
+  .wk_mar_con{
+    animation: marquee 50s linear infinite;
+    animation-delay: 2s;
+
+  }
+  .wk_mar_con h2{
+    font-size: 3.5rem;
   }
 
   .p_g3container {
