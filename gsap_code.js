@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
             scrub: 2,
             pin: true,
             pinSpacing: false,
-            // markers: true,
+            markers: true,
           },
         });
 
@@ -558,7 +558,7 @@ document.addEventListener("DOMContentLoaded", function () {
             scrub: 2.5,
             pin: true,
             pinSpacing: false,
-            // markers: true,
+            markers: true,
           },
         });
 
