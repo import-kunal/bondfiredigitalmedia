@@ -678,7 +678,6 @@ nav .nav-r {
 }
 
 /* ======================HOMEPAGE_PAGE2======================================================================================================= */
-
 .page2 {
   position: relative;
   margin-top: 48%;
@@ -686,35 +685,62 @@ nav .nav-r {
   /* padding: 10rem ; */
   /* min-height: 150vh; */
 }
+
 .p2_txt {
-  padding: 10rem 10rem 10rem 10rem;
+  padding: 10rem;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
 }
+
 .p2_left {
   width: 30%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
 }
-/* #build{
-  color: #ff0059;
-}
-#impactful{
-  color: #ffa700;
-}
-#experiences{
-  color: #1574d8;
-} */
+
 .ashtrik_ {
   position: relative;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
-  justify-content: end;
+  -webkit-box-pack: end;
+  -moz-box-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  -webkit-transition: -webkit-transform 0.7s ease-in-out;
+  -moz-transition: -moz-transform 0.7s ease-in-out;
+  -o-transition: -o-transform 0.7s ease-in-out;
   transition: transform 0.7s ease-in-out;
+  -webkit-transform-origin: center;
+  -moz-transform-origin: center;
+  -o-transform-origin: center;
   transform-origin: center;
 }
-/* .ashtrik_:hover{
+
+/* .ashtrik_:hover {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
   transform: rotate(360deg);
 } */
+
 .ashtrik_ .logo {
   width: 18vw;
   background: #393939;
@@ -722,50 +748,68 @@ nav .nav-r {
   border-radius: 50rem;
   position: relative;
 }
+
 .ashtrik_ .logo img {
   width: 100%;
 }
+
 .p2conn {
   position: absolute;
   top: 4%;
   left: 50%;
-  transform: translateX(-0%);
+  -webkit-transform: translateX(0%);
+  -moz-transform: translateX(0%);
+  -o-transform: translateX(0%);
+  transform: translateX(0%);
   width: 100%;
   height: 100%;
+  -webkit-transform-origin: center;
+  -moz-transform-origin: center;
+  -o-transform-origin: center;
   transform-origin: center;
 }
+
 .p2conn p {
   color: #f6f6f6;
 }
 
 .p2conn span {
   position: absolute;
+  -webkit-transform-origin: 0% 8vw;
+  -moz-transform-origin: 0% 8vw;
+  -o-transform-origin: 0% 8vw;
   transform-origin: 0% 8vw;
 }
+
 .p2rbtm h3,
 .p2rbtm h6,
 .p2rbtm p {
   text-align: end;
 }
+
 .page2 h5,
 .page2 h2 {
   color: #f6f6f6;
 }
+
 .p2_txt h3 {
   width: 70%;
   text-transform: capitalize;
   font-size: 6rem;
   font-family: "bondfire-me";
 }
+
 .p2_txt h3 span {
   font-family: "bondfire-bl";
   text-transform: uppercase;
   /* color: #1574d8; */
 }
+
 .p2_txt h5 {
   padding-bottom: 2rem;
   font-family: "bondfire-li";
 }
+
 .p2_txt h3 {
   text-transform: uppercase;
 }
@@ -780,8 +824,12 @@ nav .nav-r {
 
 .wk_mar_con {
   display: inline-block;
+  -webkit-animation: marquee 75s linear infinite;
+  -moz-animation: marquee 75s linear infinite;
+  -o-animation: marquee 75s linear infinite;
   animation: marquee 75s linear infinite;
 }
+
 .wk_mar_con {
   padding: 2rem 0rem;
   background-color: #1f1f1f;
@@ -795,6 +843,33 @@ nav .nav-r {
   font-size: 5rem;
 }
 
+@-webkit-keyframes marquee {
+  0% {
+    -webkit-transform: translateX(5%); /* Start from right side */
+  }
+  100% {
+    -webkit-transform: translateX(-100%); /* Move to left side */
+  }
+}
+
+@-moz-keyframes marquee {
+  0% {
+    -moz-transform: translateX(5%); /* Start from right side */
+  }
+  100% {
+    -moz-transform: translateX(-100%); /* Move to left side */
+  }
+}
+
+@-o-keyframes marquee {
+  0% {
+    -o-transform: translateX(5%); /* Start from right side */
+  }
+  100% {
+    -o-transform: translateX(-100%); /* Move to left side */
+  }
+}
+
 @keyframes marquee {
   0% {
     transform: translateX(5%); /* Start from right side */
@@ -806,6 +881,10 @@ nav .nav-r {
 
 .inner_pg {
   display: none;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 0.8rem;
   cursor: pointer;
@@ -823,18 +902,31 @@ nav .nav-r {
   height: 0.2rem;
   position: relative;
   background: #f6f6f6;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   border-radius: 2rem;
   cursor: pointer;
   right: 0rem;
-  transition: 0.3s ease-in-out;
+  -webkit-transition: right 0.3s ease-in-out;
+  -moz-transition: right 0.3s ease-in-out;
+  -o-transition: right 0.3s ease-in-out;
+  transition: right 0.3s ease-in-out;
 }
+
 .inner_pg:hover span:nth-child(3) {
   position: relative;
   width: 2.5rem;
   right: -1.5rem;
-  transition: 0.3s ease-in-out;
+  -webkit-transition: right 0.3s ease-in-out;
+  -moz-transition: right 0.3s ease-in-out;
+  -o-transition: right 0.3s ease-in-out;
+  transition: right 0.3s ease-in-out;
 }
+
+
 
 /* ================================================================== HOME_PAGE CASE_STUDIES=================================================================== */
 .p_g3 {
