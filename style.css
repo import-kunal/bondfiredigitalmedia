@@ -58,6 +58,7 @@ body {
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
   /* cursor: url("Images/cursorarrow.svg") 2 2, auto; */
+  text-align: justify;
 }
 ::selection {
   background-color: #ffa700;
@@ -356,6 +357,7 @@ main {
   top: 10rem;
   z-index: 100;
   color: black;
+  display:none;
 }
 .homepg {
   min-height: 100vh;

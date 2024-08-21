@@ -347,7 +347,6 @@ document.addEventListener("DOMContentLoaded", function () {
         let currentIndex = 2;
 
         function updateSlides() {
-          // Reset all classes and reflection backgrounds
           slides.forEach((slide, index) => {
             slide.classList.remove("card1", "card2", "card3", "card4", "card5");
             const reflection = slide.querySelector(".reflection");
@@ -355,7 +354,6 @@ document.addEventListener("DOMContentLoaded", function () {
             reflection.style.backgroundImage = `url(${imageSrc})`;
           });
 
-          // Assign classes based on currentIndex
           slides[
             (currentIndex + slides.length - 2) % slides.length
           ].classList.add("card1");
