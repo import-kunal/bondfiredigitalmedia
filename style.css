@@ -2580,8 +2580,10 @@ background: linear-gradient(180deg, rgba(21,21,21,1) 30%, rgba(0,0,0,0) 100%);
   }
 }
   .page2 {
-    margin-top: 60vh;
-    opacity: 0;
+    margin-top: 100vh;
+    /* opacity: 0;
+    z-index: 1; */
+    /* display: none; */
   }
   .inner_pg {
     right: 3rem;

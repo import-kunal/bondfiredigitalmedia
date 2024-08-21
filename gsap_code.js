@@ -418,7 +418,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .to(".split_one", { height: "100vh" }, "anim")
         .to(".split_two", { height: "100vh" }, "anim")
         .to(".google_search", { y: 500, opacity:0 }, "anim")
-        .to(".page2", {opacity:1 }, "anim")
+        // .to(".page2", {opacity:1, marginTop:"50vh" }, "anim")
 
  
 
@@ -428,20 +428,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
         
       // ====================================================PAGE 2 HAMBURGER MENU  =================================================
-      var gridshow = gsap.timeline({
+      var p2_menu = gsap.timeline({
         scrollTrigger: {
           trigger: ".page2",
-          start: "-50% 30%",
-          end: "bottom bottom",
+          start: "-40% 40%",
+          end: "50% bottom",
           scrub: 3,
           // markers:true,
         },
       });
 
-      gridshow.to(".gridhoverbg", {
+      p2_menu.to(".gridhoverbg", {
         opacity: 1,
         duration: 0.1,
-        // markers: true,
         onStart: function () {
           gsap.set(".gridhoverbg", { display: "grid" });
           gsap.set(".dot-grid ", { display: "grid", opacity:1 });
@@ -453,15 +452,15 @@ document.addEventListener("DOMContentLoaded", function () {
         },
       });
 
-      var p2_menu = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".page2",
-          start: "top 70%",
-          end: "bottom bottom",
-          scrub: 3,
-          // markers:true,
-        },
-      });
+      // var p2_menu = gsap.timeline({
+      //   scrollTrigger: {
+      //     trigger: ".page2",
+      //     start: "top 40%",
+      //     end: "bottom bottom",
+      //     scrub: 3,
+      //     markers:true,
+      //   },
+      // });
      
 
       p2_menu.to(".inner_pg", {
@@ -499,9 +498,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 trigger: ".p_g3",
                 pin: ".p_g3container", // Pin the container while scrolling
                 scrub: true, // Scrub value controls the smoothness of the scroll
-                // snap: 1 / (caseStudies.length - 1), // Snap to each section
+                snap: 1 / (caseStudies.length - 1), // Snap to each section
                 start: "top top",
-                markers:true,
+                // markers:true,
                 end: () => "+=" + document.querySelector(".p3r").offsetWidth
             }
         });
@@ -560,7 +559,7 @@ document.addEventListener("DOMContentLoaded", function () {
             scrub: 2.5,
             pin: true,
             pinSpacing: false,
-            markers: true,
+            // markers: true,
           },
         });
 
