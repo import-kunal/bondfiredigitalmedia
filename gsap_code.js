@@ -417,7 +417,8 @@ document.addEventListener("DOMContentLoaded", function () {
         .to(".head_three h5", { x: 500 }, "anim")
         .to(".split_one", { height: "100vh" }, "anim")
         .to(".split_two", { height: "100vh" }, "anim")
-        .to(".google_search", { y: 500, opacity:0 }, "anim");
+        .to(".google_search", { y: 500, opacity:0 }, "anim")
+        .to(".page2", {opacity:1 }, "anim")
 
  
 
@@ -497,9 +498,10 @@ document.addEventListener("DOMContentLoaded", function () {
             scrollTrigger: {
                 trigger: ".p_g3",
                 pin: ".p_g3container", // Pin the container while scrolling
-                scrub: 1, // Scrub value controls the smoothness of the scroll
-                snap: 1 / (caseStudies.length - 1), // Snap to each section
+                scrub: true, // Scrub value controls the smoothness of the scroll
+                // snap: 1 / (caseStudies.length - 1), // Snap to each section
                 start: "top top",
+                markers:true,
                 end: () => "+=" + document.querySelector(".p3r").offsetWidth
             }
         });
