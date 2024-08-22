@@ -70,115 +70,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Initial activation
   updateSection(currentStep);
-});
 
 
-
-
-
-
-
-const canvas = document.getElementById('drawingCanvas');
-
-if (canvas) {
-    const ctx = canvas.getContext('2d');
-
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    let drawing = false;
-    let drawingHistory = [];
-    let currentIndex = -1;
-
-    function startDrawing(e) {
-        drawing = true;
-        draw(e);
-    }
-
-    function endDrawing() {
-        drawing = false;
-        ctx.beginPath();
-        saveState();  // Save the state when drawing ends
-        console.log('Drawing ended. State saved.');
-    }
-
-    function draw(e) {
-        if (!drawing) return;
-
-        ctx.lineWidth = 5;
-        ctx.lineCap = 'round';
-        ctx.strokeStyle = '#FFDD00';
-
-        ctx.lineTo(e.clientX, e.clientY);
-        ctx.stroke();
-        ctx.beginPath();
-        ctx.moveTo(e.clientX, e.clientY);
-
-        console.log('Drawing at:', e.clientX, e.clientY);
-    }
-
-    function saveState() {
-        // Save the current state of the canvas
-        if (drawingHistory.length > 50) {
-            drawingHistory.shift(); // Limit history size to 50 to prevent memory issues
-        }
-        currentIndex++;
-        drawingHistory[currentIndex] = ctx.getImageData(0, 0, canvas.width, canvas.height);
-        drawingHistory.length = currentIndex + 1; // Truncate any redo states
-        console.log('State saved. Current index:', currentIndex);
-    }
-
-    function undoDrawing() {
-        if (currentIndex > 0) {
-            currentIndex--;
-            ctx.putImageData(drawingHistory[currentIndex], 0, 0);
-            console.log('Undo performed. Restored to state:', currentIndex);
-        } else if (currentIndex === 0) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            console.log('Undo performed. Canvas cleared.');
-        } else {
-            console.log('No more undos available');
-        }
-    }
-
-    canvas.addEventListener('mousedown', startDrawing);
-    canvas.addEventListener('mouseup', endDrawing);
-    canvas.addEventListener('mousemove', draw);
-
-    // Listen for Ctrl+Z or Cmd+Z for undo
-    window.addEventListener('keydown', (e) => {
-        if ((e.ctrlKey || e.metaKey) && e.key === 'z') {
-            console.log('Ctrl+Z or Cmd+Z detected');
-            undoDrawing();
-        }
-    });
-
-    // Log the initial state
-    saveState();
-}
-
-
-
-// const cstit = document.querySelector(".cstit");
-// if(cstit){
-//   function adjustHeight() {
-//     const navbarHeight = document.querySelector(".navbar").offsetHeight;
-//     const cstitHeight = document.querySelector(".cstit").offsetHeight;
-//     const maxHeight = Math.max(navbarHeight, cstitHeight);
-//     document.querySelector(
-//       ".head_wrapper"
-//     ).style.height = `calc(100vh - ${maxHeight}px)`;
-//   }
-
-//   window.addEventListener("resize", adjustHeight);
-//   window.addEventListener("load", adjustHeight);
-
-
-// }
-
-document.addEventListener("DOMContentLoaded", function () {
-  // Function to disable scrolling
-  function disableScroll() {
+  // /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+   // Function to disable scrolling
+   function disableScroll() {
     document.body.style.overflow = "hidden";
   }
 
@@ -388,7 +284,113 @@ document.addEventListener("DOMContentLoaded", function () {
       toggleAside(aside, modal, sidenav, body, false)
     );
   });
+
+
 });
+
+
+
+
+
+
+
+const canvas = document.getElementById('drawingCanvas');
+
+if (canvas) {
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let drawing = false;
+    let drawingHistory = [];
+    let currentIndex = -1;
+
+    function startDrawing(e) {
+        drawing = true;
+        draw(e);
+    }
+
+    function endDrawing() {
+        drawing = false;
+        ctx.beginPath();
+        saveState();  // Save the state when drawing ends
+        console.log('Drawing ended. State saved.');
+    }
+
+    function draw(e) {
+        if (!drawing) return;
+
+        ctx.lineWidth = 5;
+        ctx.lineCap = 'round';
+        ctx.strokeStyle = '#FFDD00';
+
+        ctx.lineTo(e.clientX, e.clientY);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(e.clientX, e.clientY);
+
+        console.log('Drawing at:', e.clientX, e.clientY);
+    }
+
+    function saveState() {
+        // Save the current state of the canvas
+        if (drawingHistory.length > 50) {
+            drawingHistory.shift(); // Limit history size to 50 to prevent memory issues
+        }
+        currentIndex++;
+        drawingHistory[currentIndex] = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        drawingHistory.length = currentIndex + 1; // Truncate any redo states
+        console.log('State saved. Current index:', currentIndex);
+    }
+
+    function undoDrawing() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            ctx.putImageData(drawingHistory[currentIndex], 0, 0);
+            console.log('Undo performed. Restored to state:', currentIndex);
+        } else if (currentIndex === 0) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            console.log('Undo performed. Canvas cleared.');
+        } else {
+            console.log('No more undos available');
+        }
+    }
+
+    canvas.addEventListener('mousedown', startDrawing);
+    canvas.addEventListener('mouseup', endDrawing);
+    canvas.addEventListener('mousemove', draw);
+
+    // Listen for Ctrl+Z or Cmd+Z for undo
+    window.addEventListener('keydown', (e) => {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'z') {
+            console.log('Ctrl+Z or Cmd+Z detected');
+            undoDrawing();
+        }
+    });
+
+    // Log the initial state
+    saveState();
+}
+
+
+
+// const cstit = document.querySelector(".cstit");
+// if(cstit){
+//   function adjustHeight() {
+//     const navbarHeight = document.querySelector(".navbar").offsetHeight;
+//     const cstitHeight = document.querySelector(".cstit").offsetHeight;
+//     const maxHeight = Math.max(navbarHeight, cstitHeight);
+//     document.querySelector(
+//       ".head_wrapper"
+//     ).style.height = `calc(100vh - ${maxHeight}px)`;
+//   }
+
+//   window.addEventListener("resize", adjustHeight);
+//   window.addEventListener("load", adjustHeight);
+
+
+// }
 
 
 
