@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
       var gridshow = gsap.timeline({
         scrollTrigger: {
           trigger: ".page2",
-          start: "-50% 50%",
+          start: "-20% 50%",
           end: "bottom bottom",
           scrub: 3,
           // markers:true,
@@ -36,11 +36,12 @@ document.addEventListener("DOMContentLoaded", function () {
         duration: 0.1,
         // markers: true,
         onStart: function () {
-          gsap.set(".gridhoverbg", { display: "grid" });
+          gsap.set(".gridhoverbg", { display: "grid",zIndex: 2 });
           gsap.set(".dot-grid ", { display: "grid", opacity:1 });
+        
         },
         onReverseComplete: function () {
-          gsap.set(".gridhoverbg", { display: "none", immediateRender: true });
+          gsap.set(".gridhoverbg", { display: "none",zIndex: -2, immediateRender: true });
           gsap.set(".dot-grid ", { display: "none", opacity:0 });
 
         },
@@ -88,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
             start: "top top",
             end: "bottom bottom",
             scrub: true,
-            markers: true,
+            // markers: true,
             onUpdate: (self) => {
               const progress = self.progress;
         
@@ -126,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
             scrub: 2,
             pin: true,
             pinSpacing: false,
-            markers: true,
+            // markers: true,
           },
         });
 
@@ -557,7 +558,7 @@ document.addEventListener("DOMContentLoaded", function () {
             scrub: 2.5,
             pin: true,
             pinSpacing: false,
-            markers: true,
+            // markers: true,
           },
         });
 
